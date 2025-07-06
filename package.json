@@ -1,0 +1,20 @@
+{
+  "name": "filmesapi",
+  "version": "1.0.0",
+  "description": "Desafio de desenvolvimento de uma API em Node.js que consome uma API externa de metadados de filmes, processa e transforma os dados conforme requisitos específicos, entregando uma melhor resposta para a aplicação.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
