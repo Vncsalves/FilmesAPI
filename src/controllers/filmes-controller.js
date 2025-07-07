@@ -1,13 +1,19 @@
-const axios = require('axios');
+const Filme = require("../models/parseFilmes");
+const { buscarMetadados } = require('../services/metadadosService');
 
 module.exports = async function buscarFilmes(req, res) {
   try {
-    const response = await axios.get('https://tv5hn2gvyijpl76yxlmsy66jwa0nlmxn.lambda-url.us-east-1.on.aws/');
-    res.json(response.data);
+    const filmesBrutos = await buscarMetadados();
+
+    const filmesParseados = filmesBrutos.map((filmeBruto) =>
+      new Filme(filmeBruto).toJSON()
+    );
+
+    res.json(filmesParseados);
   } catch (erro) {
+    console.error("Erro completo:", erro);
     res.status(500).json({
-      mensagem: 'Erro na busca dos dados dos filmes',
-      erro: erro.message
+      mensagem: erro.message || 'Erro interno no servidor.',
     });
-  }     
-}
+  }
+};

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('API funcionando!');
+  res.send('API rodando');
 });
 
 const rotaFilmes = require('../src/routes/filmes');

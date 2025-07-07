@@ -1,3 +1,6 @@
-module.exports ={
-    urlMetadadosApi: 'https://tv5hn2gvyijpl76yxlmsy66jwa0nlmxn.lambda-url.us-east-1.on.aws/'
-}
+require('dotenv').config(); 
+
+module.exports = {
+  port: process.env.PORT || 3000,
+  urlMetadadosApi: process.env.API_METADADOS_URL
+};
