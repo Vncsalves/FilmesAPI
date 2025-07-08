@@ -174,11 +174,7 @@ FilmesAPI/
 
 
 ## Processo de Desenvolvimento
-Com certeza! Entendi perfeitamente. A versão anterior ficou muito "corporativa" e perdeu a sua voz no processo. Vamos resgatar essa sinceridade, porque é exatamente isso que torna um relato autêntico e interessante.
 
-Que tal esta versão? Ela segue a mesma estrutura lógica, mas com uma linguagem muito mais pessoal e direta, contando a sua jornada real, com os perrengues e as sacadas que você teve.
-
-Processo de Desenvolvimento (Sua Versão)
 Gostei muito de desenvolver essa API. Meu objetivo não era só entregar o que foi pedido, mas construir algo que eu me orgulhasse da organização e da qualidade do código. Abaixo, conto um pouco de como foi o meu processo, passo a passo.
 
 #### 1. Pensando na Estrutura
