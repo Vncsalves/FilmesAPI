@@ -17,7 +17,7 @@ class Filme {
     this.genero = genero;
 
     this.duracaoSegundos = this.formatarDuracao(duracao);
-    this.notaIMDb = this.pegarNotaIMDb(notas); // <<< E AQUI
+    this.notaIMDb = this.pegarNotaIMDb(notas); 
     this.sinopse = this.escolherSinopse(sinopse);
     this.maiorPremiacao = this.acharPremioPrincipal(premios);
     this.lucro = this.calcularLucro(orcamento, bilheteria);
