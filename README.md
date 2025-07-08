@@ -9,10 +9,11 @@
 6. [Configuração](#configuração)
 7. [Uso](#uso)
 8. [Endpoints da API](#endpoints-da-api)
-9. [Estrutura do Projeto](#estrutura-do-projeto)
-10. [Processo de Desenvolvimento](#processo-de-desenvolvimento)  
-11. [Conclusão](#conclusão)
-12. [Licença](#licença)
+9. [Testes Unitários](#testes-unitários)
+10. [Estrutura do Projeto](#estrutura-do-projeto)
+11. [Processo de Desenvolvimento](#processo-de-desenvolvimento)  
+12. [Conclusão](#conclusão)
+13. [Licença](#licença)
 
 ## Introdução
 Esta API foi desenvolvida como um desafio técnico e demonstra a construção de um backend robusto e bem estruturado em Node.js. A principal função desta aplicação é consumir dados de uma API externa de metadados de filmes, processar, limpar e enriquecer essas informações, e então expô-las através de um endpoint RESTful próprio.
@@ -133,12 +134,32 @@ A API possui um único endpoint principal, que retorna a lista de filmes process
   ]
 
 
+## Testes Unitários
+
+Ainda não possuo um conhecimento aprofundado em testes automatizados, mas entendo a sua grande importância para garantir a qualidade e a estabilidade de uma aplicação. Por isso, fiz questão de iniciar o hábito de implementá-los neste projeto.
+
+Para esta API, criei um teste de unidade simples utilizando o framework **Jest**. O foco do teste foi a parte mais crítica e com mais lógica de negócio da aplicação: a classe `Filme` (no arquivo `src/models/parseFilmes.js`).
+
+O teste garante que, ao receber um objeto de filme com dados brutos, a classe sempre irá:
+- Calcular o lucro corretamente.
+- Converter a duração de minutos para segundos.
+- Extrair a nota do IMDb de forma correta.
+
+Isso assegura que futuras alterações na lógica de transformação dos dados não quebrem as funcionalidades principais.
+
+#### Como Executar os Testes
+Para rodar a suíte de testes, execute o seguinte comando no terminal:
+```bash
+npm test
+```
 
 ## Estrutura do Projeto
 A organização do projeto segue uma arquitetura em camadas, separando as responsabilidades para garantir um código limpo e de fácil manutenção.
 
 ```
 FilmesAPI/
+├── __tests__/
+│   └── parseFilmes.test.js
 ├── core/
 │   ├── app.js
 │   └── server.js
@@ -160,6 +181,8 @@ FilmesAPI/
 └── README.md
 ```
 
+
+- **`__tests__/`**: Contém os testes automatizados da aplicação. Utiliza o Jest para garantir a qualidade e o funcionamento correto da lógica de negócio.
 - **`core/`**: Contém os arquivos centrais que iniciam a aplicação.
   - **`app.js`**: Configura a aplicação Express, define middlewares e anexa as rotas.
   - **`server.js`**: Cria e inicializa o servidor HTTP.
@@ -169,7 +192,6 @@ FilmesAPI/
 - **`src/routes/`**: Define os endpoints da API e os conecta aos seus respectivos controllers.
 - **`src/services/`**: Camada responsável pela comunicação com serviços externos, como a API de metadados.
 - **`Arquivos na Raiz`**: Incluem arquivos de configuração do projeto, como `package.json`, `.gitignore` e as variáveis de ambiente.
-
 
 
 
